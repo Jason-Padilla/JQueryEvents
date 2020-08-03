@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery Events</title>
+    <!-- CSS only -->
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+         <style>
+    body
+    {
+    
+        background-image: url("images/email-pattern.png");
+    }
+    .container 
+    {
+        padding: 30px 10px;
+        
+    }
+    .card
+    {
+        margin-bottom: 15px;
+    }
+    .make-blue 
+    {
+        background-color: blue!important; 
+    }
+    .btn-danger
+    {
+        color: white!important;
+    }
+</style>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">.hide() Event</h5>
+                        <p id = "toHide" class="card-text"> This text will be hidden.</p>
+                        <a id = "hideBtn" class="btn btn-danger">Hide Text</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">.show() Event</h5>
+                        <p class="card-text"> Text will be shown: <span id = "toShow" style = "display: none;">this is the text shown.</span></p>
+                        <a id = "showBtn" class="btn btn-danger">Show Text</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">.toggle() Event</h5>
+                  <p id = "showToggle"class="card-text">This text will be toggled from shown to hidden.</p>
+                  <a id = "showToggleBtn" class="btn btn-danger">Toggle Text</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">.slideUp() Event</h5>
+                    <p id = "toSlideUp" class="card-text">This text will be slid up.</p>
+                    <a id="slideUpBtn" href = "#" class="btn btn-danger">Slide Up Text</a>
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">.slideDown() Event</h5>
+                    <p id = "toSlideDown" class="card-text" style="display: none;">This text will be slid down.</p>
+                    <a id="slideDownBtn" href = "#" class="btn btn-danger">Slide Down Text</a>
+                  </div>
+                </div>
+              </div>
+            <div class="col-sm-6">
+                <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">.slideToggle() Event</h5>
+                    <p id = "toSlideToggle" class="card-text" style="display:none">This text will be toggled between text slide up and slide down</p>
+                    <a id = "slideToggleBtn" class="btn btn-danger">Slide Toggle Text</a>
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">.fadeIn() Event</h5>
+                  <p class="card-text"> Text will fade in: <span id = "toFadeIn" style = "display:none ">faded in text.</span></p>
+                  <a id = "fadeInBtn" class="btn btn-danger">Fade In Text</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">.fadeOut() Event</h5>
+                  <p class="card-text"> This text wll fade out: <span id = "toFadeOut">fade out.</span></p>
+                  <a id = "fadeOutBtn" class="btn btn-danger">Fade Out Text</a>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">.addClass() Event</h5>
+                  <p class="card-text">This change every button to blue.</p>
+                  <a id = "blueBtn" class="btn btn-danger">Add Class</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">.before() Event</h5>
+                  <p id = "toBefore"class="card-text">Text will be added before this text.</p>
+                  <a id = "beforeBtn"class="btn btn-danger">Add Text Before</a>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">.after() Event</h5>
+                  <p id = "toAfter" class="card-text">Text will be added after this text.</p>
+                  <a id = "afterBtn" class="btn btn-danger">Add Text After</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">.append() Event</h5>
+                  <p id = "toAppend" class="card-text">This will append html text to the end.</p>
+                  <a id = "appendBtn" class="btn btn-danger">Append</a>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">.html() Event</h5>
+                  <p id = "toHtml" class="card-text">This will change the html of this div.</p>
+                  <a id = "htmlBtn" class="btn btn-danger">Change Html</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">.attr() Event</h5>
+                  <p class="card-text">This will get the attribute of any div.</p>
+                  <a id = "attrBtn"class="btn btn-danger">Get Attr</a>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">.val() Event</h5>
+                  <p class="card-text" style = "display:inline-block">This will get the value of the dropdown.</p>
+                  <select id="values">
+                    <option>value1</option>
+                    <option>value2</option>
+                  </select>
+                  <br>
+                  <a id = "getValue" class="btn btn-danger">Get Value</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">.text() Event</h5>
+                  <p id ="toText" class="card-text">This text will be changed</p>
+                  <a id = "textBtn" class="btn btn-danger">Get Text</a>
+                </div>
+              </div>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        $('#hideBtn').click(function(){
+            $("#toHide").hide();
+        })
+        $('#showBtn').click(function(){
+            $("#toShow").show();
+        })
+        $('#showToggleBtn').click(function(){
+            $("#showToggle").toggle('slow');
+        })
+        $('#slideDownBtn').click(function(){
+            $("#toSlideDown").slideDown();
+        })
+        $('#slideUpBtn').click(function(){
+            $("#toSlideUp").slideUp();
+        })
+        $('#slideToggleBtn').click(function(){
+            $("#toSlideToggle").slideToggle();
+        })
+        $('#fadeInBtn').click(function(){
+            $("#toFadeIn").fadeIn();
+        })
+        $('#fadeOutBtn').click(function(){
+            $("#toFadeOut").fadeOut();
+        })
+        $('#blueBtn').click(function(){
+            $("a").addClass("make-blue");
+        })
+        $('#beforeBtn').click(function(){
+            $("#toBefore").before("Hello!");
+        })
+        $('#afterBtn').click(function(){
+            $("#toAfter").after("Hello!");
+        })
+        $('#appendBtn').click(function(){
+            $("#toAppend").append("<strong> Hello!</strong>");
+        })
+        $('#attrBtn').click(function(){
+            var color = $("#attrBtn").attr("id");
+            alert( "The id of this button is: " + color);
+        })
+        $('#getValue').click(function(){
+            var color = $("#values").val();
+            alert( "The value is: " + color);
+        })
+        $('#textBtn').click(function(){
+            $('#toText').text("This changed the text");
+        });
+    </script>
+</body>
+</html>
